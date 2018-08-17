@@ -1,2 +1,2 @@
 # exercise
-all Java code that I play around with
+All Java code that I play around with
