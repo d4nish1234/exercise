@@ -5,7 +5,6 @@ import java.util.Arrays;
 class E1_2_CheckPermutation {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		// expect true
 		System.out.println(checkPermutation("abc  ", " bc a"));
@@ -13,7 +12,7 @@ class E1_2_CheckPermutation {
 
 		// expect false		
 		System.out.println(checkPermutation("abc  ", " bb a"));
-		System.out.println(checkPermutation2("abc  ", " bc a"));
+		System.out.println(checkPermutation2("abc  ", " cb a"));
 	}
 	static boolean checkPermutation(String s1, String s2) {
 		System.out.println("check permutation: ");
@@ -51,7 +50,7 @@ class E1_2_CheckPermutation {
 		for (char c : stChar1) {
 			charCount[c]++;
 		}
-		for (char c : stChar1) {
+		for (char c : stChar2) {
 			charCount[c]--;
 			if (charCount[c]<0) {
 				return false;
