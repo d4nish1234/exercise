@@ -7,7 +7,11 @@ import java.util.Map.Entry;
 public class E1_4_PalindronePermutation {
 
 	public static void main(String[] args) {
-		System.out.println(findPalindronePermutation("Tact coa"));
+//		System.out.println(findPalindronePermutation("Tact coa"));
+		
+		// use bit vector
+//		System.out.println(1 << 3);
+//		System.out.println(~2);
 		
 	}
 	static boolean findPalindronePermutation(String input) {
