@@ -7,23 +7,25 @@ public class E1_7_RotateMatrix {
 		// INCOMPLETE - DOES NOT WORK
 		int [] [] matrix1 = new int[][] {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
 		int [] [] matrix2 = new int[][] {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-//		rotateMatrix(matrix1);
+		rotateMatrix(matrix1);
 		rotateMatrix(matrix2);
 	}
 	static void rotateMatrix(int [] [] inputMatrix) {
 		System.out.println("Before rotate:");
 		printMatrix(inputMatrix);
+		int N = inputMatrix.length;
 		
-		for (int i=0;i<inputMatrix.length;i++) {
-			for (int j=0;j<inputMatrix[i].length;j++) {
+		for (int i=0;i<N/2;i++) {
+			for (int j=i;j<N-i-1;j++) {
 				int temp = inputMatrix[i][j]; // make top temp
-				inputMatrix [i][j] = inputMatrix [j][i];
-//				inputMatrix [3][0] = inputMatrix [3][3];
-//				inputMatrix [3][3] = inputMatrix [0][3];
-//				inputMatrix [0][3] =temp;
+				inputMatrix [i][j] = inputMatrix [N-1-j][i];
+				inputMatrix [N-1-j][i] = inputMatrix [N-1-i][N-1-j];
+				inputMatrix [N-1-i][N-1-j] = inputMatrix [j][N-1-i];
+				inputMatrix [j][N-1-i] =temp;
 			}
 		}
 
+		// templated used for above loop
 //		int temp = inputMatrix[0][0]; // make top temp
 //		inputMatrix [0][0] = inputMatrix [3][0];
 //		inputMatrix [3][0] = inputMatrix [3][3];
