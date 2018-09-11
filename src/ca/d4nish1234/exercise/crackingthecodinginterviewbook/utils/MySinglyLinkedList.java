@@ -5,6 +5,59 @@ import java.util.ArrayList;
 public class MySinglyLinkedList{
 	//unsorted linked list
 	private SinglyLinkedListNode n;
+	public SinglyLinkedListNode getFirstNode() {
+		return n;
+	}
+	public void setFirstNode(SinglyLinkedListNode first) {
+		this.n= first;
+	}
+	
+	public boolean deleteNode(int position) {
+		if (position <1 ) return false;
+		
+		if (position == 1) {
+			if (this.getFirstNode()!=null) {
+				this.setFirstNode(this.getFirstNode().getNextNode());
+				return true;
+			}else {
+				return false;
+			}
+		}
+		
+		SinglyLinkedListNode n = this.getFirstNode();
+		for (int i=2; i<position;i++) {
+			if (n==null || n.getNextNode()==null) {
+				return false;
+			}
+			n=n.getNextNode();
+		}
+		if (n.getNextNode()!=null) {
+			n.setNextNode(n.getNextNode().getNextNode());
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public int length() {
+		SinglyLinkedListNode node = this.getFirstNode();
+		if (node ==null) {
+			return 0;
+		}
+		int count=1;
+		
+		while (node.getNextNode() !=null) {
+			node=node.getNextNode();
+			count++;
+		}
+		return count;
+	}
+	
+	public void returnKthToLast(int k) {
+		for (int i =1;i<=k-1;i++) {
+			this.setFirstNode(this.getFirstNode().getNextNode());
+		}
+	}
 	public void add(SinglyLinkedListNode newNode){
 //		System.out.println("adding..." + newNode.getNodeValue());
 		if (n==null) {
@@ -53,5 +106,17 @@ public class MySinglyLinkedList{
 		}
 		System.out.println("end");
 		
+	}
+	public void populateTestData() {
+		this.add(new SinglyLinkedListNode(1));
+		this.add(new SinglyLinkedListNode(2));
+		this.add(new SinglyLinkedListNode(3));
+		this.add(new SinglyLinkedListNode(4));
+		this.add(new SinglyLinkedListNode(5));
+		this.add(new SinglyLinkedListNode(6));
+		this.add(new SinglyLinkedListNode(7));
+		this.add(new SinglyLinkedListNode(8));
+		this.add(new SinglyLinkedListNode(9));
+		this.add(new SinglyLinkedListNode(10));
 	}
 }
