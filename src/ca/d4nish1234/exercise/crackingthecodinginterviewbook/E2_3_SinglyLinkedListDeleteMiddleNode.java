@@ -2,7 +2,7 @@ package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
 
-public class E2_3_DeleteMiddleNode {
+public class E2_3_SinglyLinkedListDeleteMiddleNode {
 
 	public static void main(String[] args) {
 		MySinglyLinkedList ll = new MySinglyLinkedList();

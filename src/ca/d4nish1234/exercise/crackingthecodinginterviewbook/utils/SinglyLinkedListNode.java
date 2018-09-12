@@ -7,10 +7,10 @@ public class SinglyLinkedListNode{
 		super();
 		this.value = value;
 	}
-	public SinglyLinkedListNode(){
-		super();
-		this.value=0;
-	}
+//	public SinglyLinkedListNode(){
+//		super();
+//		this.value=0;
+//	}
 	public int getNodeValue() {
 		return value;
 	}

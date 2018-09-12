@@ -3,7 +3,7 @@ package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedListNode;
 
-public class E2_1_RemoveDuplicates {
+public class E2_1_SinglyLinkedListRemoveDuplicates {
 
 	public static void main(String[] args) {
 		MySinglyLinkedList ll = new MySinglyLinkedList();

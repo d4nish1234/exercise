@@ -11,7 +11,53 @@ public class MySinglyLinkedList{
 	public void setFirstNode(SinglyLinkedListNode first) {
 		this.n= first;
 	}
-	
+	public boolean partition(int partition) {
+		MySinglyLinkedList lower = new MySinglyLinkedList();
+		MySinglyLinkedList upper = new MySinglyLinkedList();
+		
+		SinglyLinkedListNode node = this.getFirstNode();
+		
+		
+		// if empty dont do anything
+		if (node ==null)
+			return false;
+		
+		boolean isFirst=true;
+		// make two linked lists : one for upper one for lower
+		do {
+			if (node.getNextNode()!=null) {
+				if (node.getNodeValue()< partition) {
+					lower.add(new SinglyLinkedListNode(node.getNodeValue()));
+				}else {
+					upper.add(new SinglyLinkedListNode(node.getNodeValue()));
+				}
+			}
+			if (isFirst) {
+				isFirst=false;
+			}else {
+				node = node.getNextNode();
+			}
+				
+		}while(node != null);
+		
+//		lower.printMyLinkedList();
+//		upper.printMyLinkedList();
+		
+		node = lower.getFirstNode();
+		
+		if (node == null) {
+			this.setFirstNode(upper.getFirstNode());
+			return true;
+		}
+		
+		
+		while (node.getNextNode()!=null) {
+			node = node.getNextNode();
+		}
+		node.setNextNode(upper.getFirstNode());
+		this.setFirstNode(lower.getFirstNode());
+		return true;
+	}
 	public boolean deleteNode(int position) {
 		if (position <1 ) return false;
 		
