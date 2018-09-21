@@ -11,6 +11,58 @@ public class MySinglyLinkedList{
 	public void setFirstNode(SinglyLinkedListNode first) {
 		this.n= first;
 	}
+	public void addSingleChars(String toAdd) {
+		for (char c: toAdd.toCharArray()) {
+			this.add(new SinglyLinkedListNode(Character.getNumericValue(c)));
+		}
+	}
+	public void empty() {
+		this.setFirstNode(null);
+	}
+	public void clear() {
+		this.setFirstNode(null);
+	}
+	public static MySinglyLinkedList toLinkedList(String value, boolean isForward) {
+//		System.out.println("sum of " + sum1Long + " and " + sum2Long + " = " + totalSum);
+//		System.out.println("summed values: " + totalSum);
+		char [] reverseSumOutput;
+		if (isForward) {
+			reverseSumOutput = value.toCharArray();
+		}else {
+			reverseSumOutput = Utils.reverseStr(value).toCharArray();
+		}
+//		System.out.println("Reversed sum: " + Arrays.toString(reverseSumOutput));
+		MySinglyLinkedList ll = new MySinglyLinkedList();
+		for (int i=0;i<reverseSumOutput.length; i++) {
+//			System.out.println("adding: " + Character.getNumericValue(reverseSumOutput[i]));
+//			ll.printMyLinkedList();
+			ll.add(new SinglyLinkedListNode(Character.getNumericValue(reverseSumOutput[i])));
+		}
+//		ll.printMyLinkedList();
+		return ll;
+	}
+	public String convertToString(boolean isForward) {
+		SinglyLinkedListNode node = this.getFirstNode();
+		if (node==null) {
+			return "";
+		}
+		StringBuilder result = new StringBuilder();
+		result.append(node.getNodeValue());
+		do {
+			node=node.getNextNode();
+			if (node!=null) {
+				result.append(node.getNodeValue());
+			}
+			
+		}while (node!=null);
+//		System.out.println(Utils.reverseStr(result.toString()));
+		if (isForward) {
+			return result.toString();
+		}else {
+			return Utils.reverseStr(result.toString());
+		}
+	}
+	
 	public boolean partition(int partition) {
 		MySinglyLinkedList lower = new MySinglyLinkedList();
 		MySinglyLinkedList upper = new MySinglyLinkedList();

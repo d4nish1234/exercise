@@ -1,12 +1,7 @@
 package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 
-import java.util.Arrays;
-
-import com.sun.corba.se.impl.javax.rmi.CORBA.Util;
-
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedListNode;
-import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.Utils;
 
 /** 
  * Example input: (7 -> 1 -> 6) + (5 -> 9 -> 2) thats 617+295. 
@@ -30,42 +25,28 @@ public class E2_5_SinglyLinkedListSumList {
 		ll2.add(new SinglyLinkedListNode(9));
 		ll2.add(new SinglyLinkedListNode(2));
 		ll2.printMyLinkedList();
-		sumList(ll, ll2).printMyLinkedList();
+		sumListBackWards(ll, ll2).printMyLinkedList();
+		
+		sumListForwards(ll, ll2).printMyLinkedList();
 		
 	}
-	private static MySinglyLinkedList sumList(MySinglyLinkedList sum1, MySinglyLinkedList sum2) {
-		Long sum1Long = convertToLong(sum1);
-		Long sum2Long = convertToLong(sum2);
+	
+	private static MySinglyLinkedList sumListForwards(MySinglyLinkedList sum1, MySinglyLinkedList sum2) {
+		Long sum1Long = convertToLong(sum1, true);
+		Long sum2Long = convertToLong(sum2, true);
 		Long totalSum = sum1Long + sum2Long;
-		System.out.println("sum of " + sum1Long + " and " + sum2Long + " = " + totalSum);
-//		System.out.println("summed values: " + totalSum);
-		char [] reverseSumOutput = Utils.reverseStr(totalSum.toString()).toCharArray();
-//		System.out.println("Reversed sum: " + Arrays.toString(reverseSumOutput));
-		MySinglyLinkedList ll = new MySinglyLinkedList();
-		for (int i=0;i<reverseSumOutput.length; i++) {
-//			System.out.println("adding: " + Character.getNumericValue(reverseSumOutput[i]));
-//			ll.printMyLinkedList();
-			ll.add(new SinglyLinkedListNode(Character.getNumericValue(reverseSumOutput[i])));
-		}
-//		ll.printMyLinkedList();
-		return ll;
+		
+		return MySinglyLinkedList.toLinkedList(totalSum.toString(), true);
 	}
-	private static Long convertToLong(MySinglyLinkedList ll) {
-		SinglyLinkedListNode node = ll.getFirstNode();
-		if (node==null) {
-			return 0l;
-		}
-		StringBuilder result = new StringBuilder();
-		result.append(node.getNodeValue());
-		do {
-			node=node.getNextNode();
-			if (node!=null) {
-				result.append(node.getNodeValue());
-			}
-			
-		}while (node!=null);
-//		System.out.println(Utils.reverseStr(result.toString()));
-		return Long.parseLong(Utils.reverseStr(result.toString()));
+	private static MySinglyLinkedList sumListBackWards(MySinglyLinkedList sum1, MySinglyLinkedList sum2) {
+		Long sum1Long = convertToLong(sum1, false);
+		Long sum2Long = convertToLong(sum2, false);
+		Long totalSum = sum1Long + sum2Long;
+		
+		return MySinglyLinkedList.toLinkedList(totalSum.toString(), false);
+	}
+	private static Long convertToLong(MySinglyLinkedList ll, boolean isForward) {
+			return Long.parseLong(ll.convertToString(isForward));
 	}
 	
 }
