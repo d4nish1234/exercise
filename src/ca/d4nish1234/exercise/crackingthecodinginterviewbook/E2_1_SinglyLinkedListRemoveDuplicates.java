@@ -1,13 +1,13 @@
 package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 
-import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
+import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedList;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedListNode;
 
 public class E2_1_SinglyLinkedListRemoveDuplicates {
 
 	public static void main(String[] args) {
-		MySinglyLinkedList ll = new MySinglyLinkedList();
-		MySinglyLinkedList ll2 = new MySinglyLinkedList();
+		SinglyLinkedList ll = new SinglyLinkedList();
+		SinglyLinkedList ll2 = new SinglyLinkedList();
 		
 		ll.add(new SinglyLinkedListNode (225));	ll.add(new SinglyLinkedListNode (225));	ll.add(new SinglyLinkedListNode (225));	ll.add(new SinglyLinkedListNode (225));
 		ll.printMyLinkedList();

@@ -3,14 +3,14 @@ package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 import java.util.HashSet;
 import java.util.Set;
 
-import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
+import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedList;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedListNode;
 
 public class E2_8_SinglyLinkedListLoopDetection {
 
 	public static void main(String[] args) {
 
-		MySinglyLinkedList ll = new MySinglyLinkedList();
+		SinglyLinkedList ll = new SinglyLinkedList();
 //		ll.populateTestData();
 		ll.addSingleChars("123");
 		ll.printMyLinkedList();
@@ -19,7 +19,7 @@ public class E2_8_SinglyLinkedListLoopDetection {
 		ll.add(corruptNode);
 		loopDetection(ll);
 	}
-	private static void loopDetection(MySinglyLinkedList ll) {
+	private static void loopDetection(SinglyLinkedList ll) {
 		
 		Set<SinglyLinkedListNode> llNodeReference = new HashSet<SinglyLinkedListNode>();
 		SinglyLinkedListNode node = ll.getFirstNode();

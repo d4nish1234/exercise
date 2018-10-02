@@ -2,7 +2,7 @@ package ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils;
 
 import java.util.ArrayList;
 
-public class MySinglyLinkedList{
+public class SinglyLinkedList{
 	//unsorted linked list
 	private SinglyLinkedListNode n;
 	public SinglyLinkedListNode getFirstNode() {
@@ -22,7 +22,7 @@ public class MySinglyLinkedList{
 	public void clear() {
 		this.setFirstNode(null);
 	}
-	public static MySinglyLinkedList toLinkedList(String value, boolean isForward) {
+	public static SinglyLinkedList toLinkedList(String value, boolean isForward) {
 //		System.out.println("sum of " + sum1Long + " and " + sum2Long + " = " + totalSum);
 //		System.out.println("summed values: " + totalSum);
 		char [] reverseSumOutput;
@@ -32,7 +32,7 @@ public class MySinglyLinkedList{
 			reverseSumOutput = Utils.reverseStr(value).toCharArray();
 		}
 //		System.out.println("Reversed sum: " + Arrays.toString(reverseSumOutput));
-		MySinglyLinkedList ll = new MySinglyLinkedList();
+		SinglyLinkedList ll = new SinglyLinkedList();
 		for (int i=0;i<reverseSumOutput.length; i++) {
 //			System.out.println("adding: " + Character.getNumericValue(reverseSumOutput[i]));
 //			ll.printMyLinkedList();
@@ -64,8 +64,8 @@ public class MySinglyLinkedList{
 	}
 	
 	public boolean partition(int partition) {
-		MySinglyLinkedList lower = new MySinglyLinkedList();
-		MySinglyLinkedList upper = new MySinglyLinkedList();
+		SinglyLinkedList lower = new SinglyLinkedList();
+		SinglyLinkedList upper = new SinglyLinkedList();
 		
 		SinglyLinkedListNode node = this.getFirstNode();
 		

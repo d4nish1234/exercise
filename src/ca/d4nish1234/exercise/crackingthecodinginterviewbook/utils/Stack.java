@@ -1,6 +1,6 @@
 package ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils;
 
-public class MyStack<T> {
+public class Stack<T> {
 	private StackNode<T> top;
 	
 	public void push(T t) {
@@ -9,7 +9,10 @@ public class MyStack<T> {
 		top=node;
 		
 	}
-	public void pop() {
+	public void pop() throws StackEmptyException{
+		if (top==null) {
+			throw new StackEmptyException();
+		}
 		top=top.getNext();
 	}
 	public void print() {
@@ -20,30 +23,5 @@ public class MyStack<T> {
 			temp=temp.getNext();
 		};
 			
-	}
-	
-	private  class StackNode<T>{
-		private T data;
-		StackNode<T> next;
-		
-		StackNode(){
-		}
-		
-		StackNode(T t){
-			this.data = t;
-		}
-		public StackNode<T> getNext() {
-			return next;
-		}
-		public void setNext(StackNode<T> next) {
-			this.next = next;
-		}
-		public void setData(T t) {
-			this.data =t;
-		}
-		public T getData() {
-			return data;
-		}
-		
 	}
 }

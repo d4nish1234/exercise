@@ -1,6 +1,6 @@
 package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 
-import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
+import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedList;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedListNode;
 
 /** 
@@ -12,7 +12,7 @@ import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedL
 public class E2_5_SinglyLinkedListSumList {
 
 	public static void main(String[] args) {
-		MySinglyLinkedList ll = new MySinglyLinkedList();
+		SinglyLinkedList ll = new SinglyLinkedList();
 //		ll.populateTestData();
 //		ll.deleteNode(10);
 		ll.add(new SinglyLinkedListNode(7));
@@ -20,7 +20,7 @@ public class E2_5_SinglyLinkedListSumList {
 		ll.add(new SinglyLinkedListNode(6));
 		ll.printMyLinkedList();
 		
-		MySinglyLinkedList ll2 = new MySinglyLinkedList();
+		SinglyLinkedList ll2 = new SinglyLinkedList();
 		ll2.add(new SinglyLinkedListNode(5));
 		ll2.add(new SinglyLinkedListNode(9));
 		ll2.add(new SinglyLinkedListNode(2));
@@ -31,21 +31,21 @@ public class E2_5_SinglyLinkedListSumList {
 		
 	}
 	
-	private static MySinglyLinkedList sumListForwards(MySinglyLinkedList sum1, MySinglyLinkedList sum2) {
+	private static SinglyLinkedList sumListForwards(SinglyLinkedList sum1, SinglyLinkedList sum2) {
 		Long sum1Long = convertToLong(sum1, true);
 		Long sum2Long = convertToLong(sum2, true);
 		Long totalSum = sum1Long + sum2Long;
 		
-		return MySinglyLinkedList.toLinkedList(totalSum.toString(), true);
+		return SinglyLinkedList.toLinkedList(totalSum.toString(), true);
 	}
-	private static MySinglyLinkedList sumListBackWards(MySinglyLinkedList sum1, MySinglyLinkedList sum2) {
+	private static SinglyLinkedList sumListBackWards(SinglyLinkedList sum1, SinglyLinkedList sum2) {
 		Long sum1Long = convertToLong(sum1, false);
 		Long sum2Long = convertToLong(sum2, false);
 		Long totalSum = sum1Long + sum2Long;
 		
-		return MySinglyLinkedList.toLinkedList(totalSum.toString(), false);
+		return SinglyLinkedList.toLinkedList(totalSum.toString(), false);
 	}
-	private static Long convertToLong(MySinglyLinkedList ll, boolean isForward) {
+	private static Long convertToLong(SinglyLinkedList ll, boolean isForward) {
 			return Long.parseLong(ll.convertToString(isForward));
 	}
 	

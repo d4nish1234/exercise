@@ -1,12 +1,12 @@
 package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 
-import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.MySinglyLinkedList;
+import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.SinglyLinkedList;
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.Utils;
 
 public class E2_6_SinglyLinkedListIsPalindrone {
 
 	public static void main(String[] args) {
-		MySinglyLinkedList ll = new MySinglyLinkedList();
+		SinglyLinkedList ll = new SinglyLinkedList();
 		System.out.println(Utils.isPalindrone("12121"));
 		ll.clear();
 		ll.addSingleChars("12121");
@@ -40,7 +40,7 @@ public class E2_6_SinglyLinkedListIsPalindrone {
 //		System.out.println(Utils.isPalindrone("123456789z987654321"));
 	}
 	
-	private static boolean isPalindrone(MySinglyLinkedList ll) {
+	private static boolean isPalindrone(SinglyLinkedList ll) {
 		System.out.println(ll.convertToString(true));
 		return Utils.isPalindrone(ll.convertToString(true));
 	}
