@@ -2,7 +2,7 @@ package ca.d4nish1234.exercise.crackingthecodinginterviewbook;
 
 import ca.d4nish1234.exercise.crackingthecodinginterviewbook.utils.Stack;
 
-public class SortStack {
+public class E3_5_SortStack {
 // can only use these operations: push , pop, peek, isEmpty()
 	
 	public static void main (String [] args) {
