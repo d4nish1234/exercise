@@ -11,7 +11,14 @@ public class E3_5_SortStack {
 		myStack.push(3);
 		myStack.push(2);
 		myStack.push(0);
-		myStack.sort();
+		myStack.push(10);
+		myStack.push(1);
+		myStack.push(4);
+		myStack.push(3);
+		myStack.print();
+		System.out.println("about to sort...");
+		myStack = Stack.sort(myStack);
+		myStack.print();
 	}
 	
 }
