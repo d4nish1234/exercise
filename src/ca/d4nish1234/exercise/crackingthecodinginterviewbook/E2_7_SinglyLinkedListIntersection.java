@@ -10,6 +10,14 @@ public class E2_7_SinglyLinkedListIntersection {
 	 */
 	public static void main(String[] args) {
 		// are we looping through this with two for loops??
+		/*
+		 * 
+		 *  (a) -> (b) -> (c)-\
+		 *                     (e) -> (g) -> (i)
+		 *        (d) -> (f) -/ 
+		 * 
+		 * 
+		 */
 	}
 
 }

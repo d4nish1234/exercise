@@ -174,7 +174,6 @@ public class SinglyLinkedList{
 		ArrayList<Integer> tempValues = new ArrayList<Integer>();
 		SinglyLinkedListNode temp = this.n;
 		if (temp==null) {
-			// first node
 			return;
 		}else {
 			// add first node value to array List
